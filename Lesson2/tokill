@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# This script is killing process that is being provided by the user
+# Usage: ./tokill
+
+echo Which process do you want to kill?
+read TOKILL
+
+kill $(ps aux | grep $TOKILL | grep -v grep | awk '{ print $2}')

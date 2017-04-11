@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This script copies files which names are provided with the command to
+# the users home folder.
+# Usage: ./totmp
+
+if [ -z $1 ]
+then
+	echo Provide names of the files that you wish to copy
+	read FILENAMES
+else 
+	FILENAMES="$@"
+fi
+
+
+for i in $FILENAMES
+do
+	cp $i $HOME
+done
+
+exit 0

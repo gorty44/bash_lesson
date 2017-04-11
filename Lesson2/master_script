@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Example script to show how sourcing works
+
+. /home/dawid/nauka_basha/Lesson2/input_script
+
+echo the value of the variable '$COLOR' is $COLOR
+
+exit 0

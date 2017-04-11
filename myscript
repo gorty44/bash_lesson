@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# komentarz
+
+echo 'hello world'
+
