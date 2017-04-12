@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Script which is extractng USERNAME out of a string
+
+STRING="cn=lara,dc=example,dc=com"
+
+STRING=${STRING%%,*}
+STRING=${STRING#*=}
+
+STRING=$(echo $STRING | tr [:upper:] [:lower:])
+
+echo The username is $STRING
+
+exit 0

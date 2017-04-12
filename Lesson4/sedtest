@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo 'sed -n 5p /etc/passwd:'
+sed -n 5p /etc/passwd
+
+echo 'sed -i s/old-text/new-text/g ./myfile:'
+sed -i s/bye/hello/g ./myfile
+
+sed -i -e '2d' ./myfile
+
+sed -i -e '2d;20d;25d' ./myfile
+
+
+cat  myfile
+
