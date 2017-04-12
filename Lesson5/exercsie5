@@ -1,0 +1,16 @@
+#!/bin/bash
+
+for USER in $(cat ldapusers)
+do
+	USER=${USER%%,*}
+	USER=${USER#*=}
+	echo $USER
+	echo $USER >> users_to_add
+done
+
+for i in $(cat users_to_add)
+do
+	echo useradd $i
+done
+
+exit 0
