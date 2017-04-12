@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ -z $1 ] && echo $1 no argument provided && exit 2
+[ -f $1 ] && echo $1 is a file && exit 0
+[ -d $1 ] && echo $1 is a directory || echo $1 is not a file nor dir && exit 0

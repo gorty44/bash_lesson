@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+if [ -z $1 ]
+then
+	echo pass an argument
+elif [ -d $1 ]
+then
+	echo $1 is a directory
+elif [ -f $1 ]
+then
+	echo $1 is a file
+else
+	echo $1 is not a file nor a directory
+fi
+
+exit 0
+

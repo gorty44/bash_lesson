@@ -1,0 +1,11 @@
+#!/bin/bash
+
+COUNTER=0
+
+while true
+do
+	sleep 1
+	COUNTER=$((COUNTER+1))
+	echo $COUNTER seconds passed since starting script
+done
+

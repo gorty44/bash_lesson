@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This script is counting files in provided directory
+
+#[ -z $1 ] && echo Provide dir && read DIR
+
+cd $1
+COUNTER=0
+
+for i in *
+do
+	COUNTER=$((COUNTER+1))
+	echo $COUNTER
+done
+
+echo I have counted $COUNTER files in this directory

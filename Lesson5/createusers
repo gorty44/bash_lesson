@@ -1,0 +1,4 @@
+#!/bin/bash
+
+for i in $(cat ./userstest); do echo useradd $i; done
+exit 0
