@@ -1,0 +1,23 @@
+#!/bin/bash
+
+INTERVAL=$1
+
+while sleep $INTERVAL
+do
+	PROCESS=$(ps -eo pcpu,pid -o comm= | sort -k1 -n -r | head -1)
+	USAGE1=$(echo $PROCESS | awk '{ print $1 }')
+	USAGE1=${USAGE1%.*}
+	PID1=$(echo $PROCESS | awk '{ print $2 }')
+	PNAME1=$(echo $PROCESS | awk '{ print $3 }')
+
+	if [ $USAGE1 -gt 20 ]
+	then
+		sleep 2
+		PROCESS2=$(ps -eo pcpu,pid -o comm= | sort -k1 -n -r | head -1)
+		USAGE2=$(echo $PROCESS2 | awk '{ print $1 }')
+		USAGE2=${USAGE2%.*}
+		PID2=$(echo $PROCESS2 | awk '{ print $2 }')
+		PNAME2=$(echo $PROCESS2 | awk '{ print $3 }')
+		[ $USAGE2 -gt 20 ] && [ $PID1=$PID2 ] && echo "CPU load of $PNAME is above 20%"
+	fi
+done
